@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>პასეანსი</title>
+	</head>
+	<body>
+	<p id="text"></p>
+	<p id="aCexili"></p>
+	<p id="kartebi"></p>
+	<h1>PC</h1>
+	<img src="deck/blank.gif" alt="ცარიელი კარტი" width="100" >
+	<img src="deck/blank.gif" alt="ცარიელი კარტი" width="100" >
+	<img src="deck/blank.gif" alt="ცარიელი კარტი" width="100" >
+	<br>
+	<h1>ME</h1>
+	<img src="deck/blank.gif" alt="ცარიელი კარტი" width="100" onclick="amotrialeba(3);">
+	<img src="deck/blank.gif" alt="ცარიელი კარტი" width="100" onclick="amotrialeba(4);">
+	<img src="deck/blank.gif" alt="ცარიელი კარტი" width="100" onclick="amotrialeba(5);">
+	<script>
+	var kartebi = ["6a","6g","6j","6k"
+	              ,"7a","7g","7j","7k"
+				  ,"8a","8g","8j","8k"
+				  ,"9a","9g","9j","9k"
+				  ,"10a","10g","10j","10k"
+				  ,"va","vg","vj","vk"
+				  ,"da","dg","dj","dk"
+				  ,"ka","kg","kj","kk"
+				  ,"ta","tg","tj","tk"];
+	/************** კარტების აჩეხვა: დასაწყისი ************/
+	var aCexili_kartebi = [];
+    var mTvleli = 0;
+	while(mTvleli < 36)
+      {
+	    var rigiTi_Nomeri = Math.floor(Math.random()*36);
+		if( kartebi[rigiTi_Nomeri] != "x")
+		  {
+		    aCexili_kartebi[mTvleli] = kartebi[rigiTi_Nomeri];
+			kartebi[rigiTi_Nomeri] = "x";
+			mTvleli++;
+		  }
+	  }
+	//document.getElementById("aCexili").innerHTML = aCexili_kartebi;
+	//document.getElementById("text").innerHTML    = kartebi;
+	kartebi = aCexili_kartebi;
+	//document.getElementById("kartebi").innerHTML    = kartebi;
+	/*************** კარტების აჩეხვა: დასასრული ***************/
+	/*var rigiTi_Nomeri = Math.floor(Math.random()*35);
+	document.getElementById("text").innerHTML = rigiTi_Nomeri;
+	document.images[0].src = "deck/" + kartebi[rigiTi_Nomeri] + ".gif";*/
+	for( var i = 0; i< 3; i++)
+	  {
+	    var rigiTi_Nomeri = Math.floor(Math.random()*35);
+		document.images[i].src = "deck/" + kartebi[rigiTi_Nomeri] + ".gif";
+	  }
+	function amotrialeba(I)
+	  {
+	    var rigiTi_Nomeri = Math.floor(Math.random()*35);
+		document.images[I].src = "deck/" + kartebi[rigiTi_Nomeri] + ".gif";
+	  }
+	function Catrialeba(J)
+	  {
+	    document.images[J].src = "deck/blank.gif";
+	  }
+	</script>
+	</body>
+</html>

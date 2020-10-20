@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>კარტების ჯამი</title>
+    <style>
+      img{
+        width:100px;
+
+      }
+      p#Sedegi{
+        font-size:30px;
+      }
+
+      </style>
+
+  </head>
+  <body>
+    <table border=0>
+      <tr>
+        <td><img src="deck/blank.gif"></td>
+        <td><img src="deck/blank.gif"></td>
+        <td><img src="deck/blank.gif"></td>
+        </tr>
+        </table>
+
+        <p id="Sedegi"></p>
+        <p id="Sedegi0"></p>
+        <p id="Sedegi1"></p>
+        <p id="Sedegi2"></p>
+
+        <script>
+
+          var banqo=["6a","7a","8a","9a","10a","va","da","ka","ta"];
+          var qulebi=[6,7,8,9,10,2,3,4,11];
+          var sum_pc=0;
+
+          for(var i=0;i<3;i++){
+            var pc=Math.floor(9*Math.random());
+            document.images[i].src="deck/"+banqo[pc]+".gif";
+            sum_pc=sum_pc+qulebi[pc];
+            document.getElementById("Sedegi"+i).innerHTML=pc;
+          }
+          document.getElementById("Sedegi").innerHTML="ჯამი = "+sum_pc;
+
+
+
+
+        </script>
+
+
+
+
+  </body>
+</html>
